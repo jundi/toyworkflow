@@ -76,7 +76,7 @@ def report_task_success(task):
 def report_task_failure(task, exception):
     """Failure Handler"""
 
-    LOGGER.info("Task %s failed in workspace %s with error %s",
+    LOGGER.info("Task %s failed in workspace %s with error: \"%s\"",
                  task.__class__.__name__, task.workspace, str(exception))
 
     # Disable task if error is Fatal
