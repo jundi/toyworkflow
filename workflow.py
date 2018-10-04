@@ -40,7 +40,7 @@ class WriteFile(WorkflowTask):
         return luigi.LocalTarget(os.path.join(self.workspace, 'output1'))
 
     def run(self):
-        LOGGER.info("The dataset is disabled: %s", str(self.disabled))
+        LOGGER.info("The task is disabled: %s", str(self.disabled))
         with self.output().open('w') as outfile:
             outfile.write('foobar')
 
@@ -54,7 +54,7 @@ class CopyFile(WorkflowTask):
         return luigi.LocalTarget(os.path.join(self.workspace, 'output2'))
 
     def run(self):
-        LOGGER.info("The dataset is disabled: %s", str(self.disabled))
+        LOGGER.info("The task is disabled: %s", str(self.disabled))
 
         if os.path.exists(os.path.join(self.workspace, 'fatal_error')):
             raise FatalWorkflowError('Encountered error, cancel workflow')
