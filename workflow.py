@@ -6,10 +6,12 @@ import logging
 import luigi
 
 
-LOGGER = logging.getLogger(__name__)
-LOGGER.setLevel(logging.INFO)
+FORMATTER = logging.Formatter('%(asctime)s %(message)s')
 FILEHANDLER = logging.FileHandler('task_log')
 FILEHANDLER.setLevel(logging.INFO)
+FILEHANDLER.setFormatter(FORMATTER)
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(FILEHANDLER)
 
 
